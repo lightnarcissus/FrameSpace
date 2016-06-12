@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class FrameExpand : MonoBehaviour {
-    private bool active = false;
+    public bool active = false;
 	// Use this for initialization
 	void Start () {
 	
@@ -25,7 +25,8 @@ public class FrameExpand : MonoBehaviour {
     {
         active = true;
         GetComponent<BoxCollider2D>().size += Vector2.one * 0.01f;
-        transform.localScale+= Vector3.one * 0.01f;
+		transform.localScale += Vector3.one * 0.01f;
+		//transform.localScale+= new Vector3(0.01f, transform.localScale.y, transform.localScale.z);
         transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y, 44.05f);
 
     }
