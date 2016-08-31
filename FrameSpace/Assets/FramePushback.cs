@@ -52,7 +52,8 @@ public class FramePushback : MonoBehaviour {
 
 		if(audioObj.transform.localScale.x >=0.01f)
 			audioObj.transform.localScale -= new Vector3(0.01f,0f,0f);
-		float ok = 1f - (1f / (audioObj.transform.localScale.x- 0.01f));
+		float ok = 1f - (0.45f / (0.45f-audioObj.transform.localScale.x));
+		Debug.Log (ok);
 		audioObj.transform.localPosition = Vector3.Lerp (audioStartPos,audioEndPos, ok);
 
 		if(textObj.transform.localScale.x >=0.01f)
